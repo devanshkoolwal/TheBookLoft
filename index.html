@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Book Loft</title>
+    <link rel="icon" href="assets/img/LOGO/logo_icon.png" type="image/icon type">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -19,14 +20,41 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="#">The Book Loft</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search ">
+        <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/LOGO/logo_light.png" class="p-0 m-0" style="width: 8rem; height: auto;" alt=""></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="launch.html">Launch</a></li>
+                <li class="nav-item" role="presentation">
+                    <div class="btn-group d-md-none">
+                        <button type="button" class="btn dropdown-toggle" style="background: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Filter
+                        </button>
+                        <div class="dropdown-menu">
+                            <p>Category</p>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Biographies</a>
+                            <a class="dropdown-item" href="#">Crime</a>
+                            <a class="dropdown-item" href="#">Fiction</a>
+                            <a class="dropdown-item" href="#">History</a>
+                            <a class="dropdown-item" href="#">Education</a>
+                            <a class="dropdown-item" href="#">Technology</a>
+                            <a class="dropdown-item" href="#">Sports</a>
+                            <div class="dropdown-divider"></div>
+                            <p>Language</p>
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Telugu</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Kannada</a>
+                            <a class="dropdown-item" href="#">Tamil</a>
+
+                        </div>
+                      </div>
+                </li>
+
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
@@ -34,11 +62,7 @@
                 <a class="btn btn-light action-button ml-2" role="button" href="signup.html">Sign up</a></div>
         </div>
     </nav>
-    <div class="jumbotron m-2">
-        <h1>The Book Loft</h1>
-        <p><br>The Book Loft is a review based web application where user can read &nbsp;reviews, compare prices from various E-Commerce Portals and many more &nbsp;functionalities.<br><br></p>
-        <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
-    </div>
+   
     <div class="row m-2">
         <div class="col-md-2 border-right">
             <h1 style="font-size:1.4rem">Filter</h1>
@@ -64,14 +88,17 @@
 </div>
         <div class="col-md-10 p-3">
             <div class="row">
-                <div class="col-md-3 mb-3" addclickonlistner="location.href='https://m.media-amazon.com/images/I/51CeJ+XZOBL._AC_UY327_FMwebp_QL65_.jpg';" style="courser:pointer;">
+                <div class="col-md-3 mb-3" addclickonlistner="location.href='book.html'" style="courser:pointer;">
+                    <a href="book.html" style="text-decoration: none; color: black;">
                     <div class="card border"><img class="mx-auto" src="https://images-na.ssl-images-amazon.com/images/I/51wYKYJo8EL._SX338_BO1,204,203,200_.jpg" style="height:250px;width:auto">
                         <div class="card-body">
                             <hr>
+                            
                             <h1 class="card-title h5">Fault in Our Stars</h1>
                             <p class="card-text">John Green</p>
                         </div>
                     </div>
+                </a>
                 </div>
             </div>
         </div>
