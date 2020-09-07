@@ -38,8 +38,12 @@
 
     
         <div class="container">
+            <form action="POST">
         <div class="row m-0 p-2 pl-8 pr-8">
-         
+            <div class="col">
+                
+                <h5 class="form_heading">Book Details*</h5>
+            </div>
         
             <div class="col-12">
             
@@ -53,14 +57,14 @@
                  
                
             </div>
-
+            
 
             <div class="col-12">
                 <div class="row">
                    <div class="col-12 col-md-4">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">AUthor Name</span>
+                          <span class="input-group-text" id="basic-addon1">Author Name</span>
                         </div >
                         <input type="text" class="form-control" placeholder="Author Name" aria-label="Name" aria-describedby="basic-addon1">
                       </div>
@@ -71,7 +75,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text" id="basic-addon1">Publisher Name</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Author Name" aria-label="Name" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Publisher Name" aria-label="Name" aria-describedby="basic-addon1">
                           </div>
                         </div>
 
@@ -80,7 +84,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1">ISBN</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Author Name" aria-label="Name" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="ISBN" aria-label="Name" aria-describedby="basic-addon1">
                               </div>
                             </div>                   
                 </div>
@@ -88,10 +92,25 @@
 
 
         </div>
+       
+        <div class="col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" >Description</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+
+
+            <div class="col">
+                <hr>
+                <h5 class="form_heading">Classification*</h5>
+            </div>
                 <div class="col-12">
                         <div class="row justify-content-between">
-                            <div class="col-md-5 border m-2">
-                                <h4>Genre</h4>
+                            <div class="col-md-5 m-2">
+                                <h6>Genre</h6>
                                 <div class="row">
                                     <div class="col-6">
                                         <input type="radio" name="genre" id="action" value="Action"><label for="action">Action</label><br>
@@ -107,9 +126,9 @@
                                     </div>
                                 </div>
                     </div>
-                    <div class="col-md-5 border m-2">
+                    <div class="col-md-5 m-2">
                         
-                        <h4>Language</h4>
+                        <h6>Language</h6>
                         <div class="row">
                             <div class="col-6">
                                 
@@ -130,10 +149,13 @@
                     </div>
 
                 </div>
-
+                <div class="col">
+                    <hr>
+                    <h5 class="form_heading">Image*</h5>
+                </div>
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-5">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1">Image Link</span>
@@ -141,14 +163,22 @@
                                 <input type="text" class="form-control" placeholder="Link" aria-label="Link" aria-describedby="basic-addon1">
                               </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-md-2 text-center">
+                            <p>OR</p>
+                        </div>
+                        <div class="col-12 col-md-5">
                             <input type="file" name="" id="">
                         </div>
                     </div>
                 </div>
+
+                <div class="col">
+                    <hr>
+                    <h5 class="form_heading">Product Links</h5>
+                </div>
                 <div class="col-12">
                     <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Amazon Link</span>
@@ -156,7 +186,7 @@
                     <input type="text" class="form-control" placeholder="Amazon Link" aria-label="Amazon Link" aria-describedby="basic-addon1">
                   </div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Flikart Link</span>
@@ -168,19 +198,42 @@
 
                     </div>   
                 </div>
-                <div class="col-12">
-                    <div class="row align-self-end">
-                        <div class="col-12 align-self-end">
-                            <button>Submit</button>
-                        </div>
 
+                <div class="col">
+                    <hr>
+                    <h5 class="form_heading">E-Book(If E-book is available)</h5>
+                    <p>*</p>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">E-Book Link</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Link" aria-label="Link" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <p>OR</p>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <input type="file" name="" id="">
+                        </div>
                     </div>
+                </div>
+               
+                
                     
                 </div>
-                
-             
+                <div style="float: right;" class="mb-3">
+                    <button type="button" class="btn btn-success" >Submit</button>
+                 </div>
+
+                </form>
         </div>
-    </div>
+        
+   
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
