@@ -1,0 +1,48 @@
+<%- include ('partials/header') %>
+<div class="row m-2">
+        <div class="col-md-2 border-right d-none d-md-inline">
+            <h1 style="font-size:1.4rem">Filter</h1>
+            <hr>
+            <h1 style="font-size:1.3rem">Category</h1><div class="pl-2">
+            <a style="color:black" href="/">All</a><br>
+            <a style="color:black" href="/category/action">Action</a><br>
+            <a style="color:black" href="/category/biographies">Biographies</a><br>
+            <a style="color:black" href="/category/crime">Crime</a><br>
+            <a style="color:black" href="/category/fiction">Fiction</a><br>
+            <a style="color:black" href="/category/history">History</a><br>
+            <a style="color:black" href="/category/education">Education</a><br>
+            <a style="color:black" href="/category/technology">Technology</a><br>
+            <a style="color:black" href="/category/sports">Sports</a><br>
+</div>
+            <h1 class="mt-2" style="font-size:1.3rem">Language</h1><div class="pl-2">
+<a style="color:black" href="#">English</a><br>
+<a style="color:black" href="#">Telugu</a><br>
+<a style="color:black" href="#">Hindi</a><br>
+<a style="color:black" href="#">Kannada</a><br>
+<a style="color:black" href="#">Tamil</a>
+
+</div>
+</div>
+        <div class="col-md-10 p-3">
+            <div class="row">
+
+                <% books.forEach(function(book){ %>
+                <div class="col-md-3 mb-3" addclickonlistner="location.href='/book/<%= book._id %>'" style="courser:pointer;">
+                    <a href="/book/<%= book._id %>" style="text-decoration: none; color: black;">
+                    <div class="card border"><img class="mx-auto" src="<%= book.image_link %>" style="height:250px;width:auto">
+                        <div class="card-body">
+                            <hr>
+                            
+                            <h1 class="card-title h5"><%= book.name %></h1>
+                            <p class="card-text"><%= book.author %></p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <% }) %>
+            </div>
+        </div>
+    </div>
+   
+    <%- include ('partials/footer') %>
