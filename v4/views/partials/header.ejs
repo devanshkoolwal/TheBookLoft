@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book Loft</title>
+    <link rel="icon" href="../assets/img/LOGO/logo_icon.png" type="image/icon type">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/iframe.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-with-Search-1.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../code/styles.css">
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script src="../code/highcharts.js"></script>
+<script src="../code/modules/series-label.js"></script>
+<script src="../code/modules/exporting.js"></script>
+<script src="../code/modules/export-data.js"></script>
+<script src="../code/modules/accessibility.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search ">
+        <div class="container"><a class="navbar-brand" href="#"><img src="assets/img/LOGO/logo_light.png" class="p-0 m-0" style="width: 8rem; height: auto;" alt=""></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="launch.html">Launch</a></li>
+                <li class="nav-item" role="presentation">
+                    <div class="btn-group d-md-none">
+                        <button type="button" class="btn dropdown-toggle" style="background: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Filter
+                        </button>
+                        <div class="dropdown-menu">
+                            <p>Category</p>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Biographies</a>
+                            <a class="dropdown-item" href="#">Crime</a>
+                            <a class="dropdown-item" href="#">Fiction</a>
+                            <a class="dropdown-item" href="#">History</a>
+                            <a class="dropdown-item" href="#">Education</a>
+                            <a class="dropdown-item" href="#">Technology</a>
+                            <a class="dropdown-item" href="#">Sports</a>
+                            <div class="dropdown-divider"></div>
+                            <p>Language</p>
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Telugu</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Kannada</a>
+                            <a class="dropdown-item" href="#">Tamil</a>
+
+                        </div>
+                      </div>
+                </li>
+
+                </ul>
+                <form class="form-inline mr-auto" target="_self">
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
+                </form>
+                <% if(!currentUser){ %>
+                <a class="btn btn-light action-button ml-2" role="button" href="/login">Sign in</a>
+                <a class="btn btn-light action-button ml-2" role="button" href="/register">Sign up</a>
+                <% } else{ %>
+                <a class="nav-link" href="#">Signed in as <%= currentUser.username %></a>
+                <a class="btn btn-light action-button ml-2" role="button" href="/logout">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>

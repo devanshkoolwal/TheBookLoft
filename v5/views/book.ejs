@@ -1,0 +1,101 @@
+<%- include ('partials/header') %>
+<div class="row m-0 p-3">
+        <div class="col-md-5 m-0 p-0 text-center"><img class="img-fluid mx-auto" style="width:auto;height:400px;" src="<%= book.image_link %>"></div>
+        <div class="col-md-7 m-0 p-0 pt-2">
+            <h1><%= book.name %></h1>
+            <h1 class="h4">~<%= book.author %></h1>
+            <p><%= book.description %><br></p><table class="b-0">
+    <tr>
+        <th>ISBN</th>
+         <th>:</th>
+        <td><%= book.isbn %></td>
+    </tr>
+    <tr>
+        <th>Publisher</th>
+        <th>:</th>
+        <td><%= book.publisher %></td>
+    </tr>
+
+    <tr>
+        <th>Language</th>
+        <th>:</th>
+        <td><%= book.language %></td>
+        
+    </tr>
+    <tr>
+        <th>Genre</th>
+        <th>:</th>
+        <td><%= book.genre %></td>
+        
+    </tr>
+</table></div>
+
+
+
+
+    </div>
+    <hr>
+    <div class="row m-0 p-0 justify-content-center align-items-end">
+        <div class="col-md-3 justify-content-center">
+            <div class="row text-center">
+                <div class="col-12"><img src="../assets/img/icon/amazon.png" style="width:70%"></div>
+                <div class="col-12">
+                    <p class="text-center h4"><br>₹ <%= amazondata.curr_price %><br><br></p><button  class="btn btn-primary align-items-center pt-2" type="button"><a style="text-decoration: none; color: white;" target="_blank" href="<%= book.amazon_aff %>">Buy now</a> </button></div>
+            </div>
+        </div>
+        <div class="col-md-3 justify-content-center">
+            <div class="row text-center">
+                <div class="col-12"><img src="../assets/img/icon/flipkart.png" style="width:80%"></div>
+                <div class="col-12">
+                    <p class="text-center h4"><br>₹ <%= flipkartdata.curr_price %><br><br></p><button class="btn btn-primary align-items-center pt-2 mb-0" type="button"><a style="text-decoration: none; color: white;" target="_blank" href="<%= book.flipkart_aff %>">Buy now</a> </button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+            <div class="text-right">
+                <a class="btn btn-success" href="/<%= book._id %>/comments/new">Add new Comment</a>
+            </div>
+            <hr>
+            <% book.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><% comment.createdAt %></span>
+                        <p><%= comment.text %></p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn=xs btn-warning" href="<%= book._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                            <form id="delete-form" action="/<%= book._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        <% }%>
+                    </div>
+                </div>
+                
+            <% }) %>
+
+
+       
+    </div>
+
+    
+
+
+    
+
+    
+    <!-- <div class="row justify-content-center">
+        
+        <div class="elfsight-app-b9af9b02-c808-4d6c-912c-be1e06da0f91 col-10">
+    </div>
+    </div> -->
+    
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+
+    </figure>
+    <script src="../assets/js/graph.js"> </script>
+
+
+<%- include ('partials/footer') %>
