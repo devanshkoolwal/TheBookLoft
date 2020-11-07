@@ -10,6 +10,7 @@ var User = require("./models/user");
 var unirest = require("unirest");
 methodOverride=require("method-override");
 var Comment=require("./models/comment");
+var partials=require("express-partials");
 const { render } = require("ejs");
 
 var amazon={
@@ -33,6 +34,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine" , "ejs");  
 app.use(methodOverride("_method"));
 app.use(express.static(__dirname+"/public"));
+
+
+app.use(partials());
 
 
 app.use(require("express-session")({
@@ -257,7 +261,7 @@ app.get("/logout", function(req,res){
 
 // comment 
 
-app.get("/:id/comments/new", isLoggedIn, function(req,res){
+app.get("/book/:id/comments/new", isLoggedIn, function(req,res){
     Book.findById(req.params.id, function(err, book){
         if(err){
             console.log(err);
@@ -297,25 +301,39 @@ app.post("/:id/comments/", isLoggedIn, function(req,res){
 });
 
 
-app.get("/:id/comments/:comment_id/edit", checkCommentOwnership, function(req,res){
+app.get("/book/:id/comments/:comment_id/edit", checkCommentOwnership, function(req,res){
 
     Comment.findById(req.params.comment_id, function(err,foundComment){
         if(err)
             res.redirect("back");
         else{
-            res.render("comments/edit",{book_id: req.params.id, comment:foundComment});
+            res.render("edit",{book_id: req.params.id, comment:foundComment});
         }
         
     })
     
 });
 
-app.put("/:comment_id", checkCommentOwnership,function(req,res){
+app.put("/book/:id/comments/:comment_id", checkCommentOwnership,function(req,res){
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
         if(err)
             res.redirect(back);
         else
-            res.redirect("/campgrounds/"+req.params.id);
+            res.redirect("/book/"+req.params.id);
+    })
+});
+
+
+app.delete("/book/:id/comments/:comment_id", checkCommentOwnership, function(req,res){
+    
+    Comment.findByIdAndRemove(req.params.comment_id, function(err){
+        if(err){
+            res.redirect("back");
+        }
+        else{
+            //req.flash("success","Comment deleted");
+            res.redirect("back");
+        }
     })
 });
 
@@ -351,7 +369,11 @@ function checkCommentOwnership(req,res,next){
         res.redirect("back");
     }
 
-}
+};
+
+app.get("/check", function(req,res){
+    res.render("check");
+})
 
 app.listen(2609,function(){
     console.log("Book Loft at 2609");
