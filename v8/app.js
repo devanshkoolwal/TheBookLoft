@@ -22,7 +22,7 @@ flash=require("connect-flash");
 //customer-reviews-content id
 
 
-mongoose.connect("mongodb://localhost:27017/tbl_v8",{ useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://thebookloft:Poojitha2001@cluster0.ssbez.mongodb.net/thebookloft?retryWrites=true&w=majority",{ useNewUrlParser: true,useUnifiedTopology: true });
 
 
 
